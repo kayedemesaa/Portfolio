@@ -308,7 +308,7 @@ function Index() {
                 Resume <ArrowUpRight size={16} />
               </a>
               <a
-                href="#projects"
+                href="/projects"
                 className="text-sm underline underline-offset-4 hover:opacity-70 transition-opacity"
               >
                 See projects
