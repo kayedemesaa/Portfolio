@@ -56,21 +56,13 @@ function About() {
               <h1 className="text-5xl md:text-6xl font-bold mb-8">About Me</h1>
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                  I&apos;m a full-stack developer focused on building modern web applications that feel
-                  fast, clear, and intentional—pairing React and TypeScript with interfaces people enjoy
-                  using.
+                I'm a UI/UX Designer and Front-End Developer passionate about creating modern, visually engaging, and user-friendly digital experiences. I enjoy turning ideas into functional designs, from websites and landing pages to mobile app interfaces, with a focus on clean layouts, intuitive navigation, and thoughtful details.
                 </p>
                 <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                  My approach balances craft and clarity: solid engineering underneath, and a design
-                  language that stays quiet until it needs to speak.
+                My approach combines creativity and technical skills, balancing visual design with functionality to create seamless and responsive user experiences. I value usability, accessibility, consistency, and attention to detail throughout the design and development process.
                 </p>
                 <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                  Whether it&apos;s a landing page or a complex product UI, I care about responsiveness,
-                  accessibility, and shipping work that holds up in the real world.
-                </p>
-                <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                  When I&apos;m not coding, I explore new tools, contribute where I can, and keep
-                  sharpening how products look and feel.
+                Beyond design and development, I can also provide administrative support, assist with data management, organize information, and handle day-to-day tasks that help keep workflows efficient. I'm always exploring new tools, learning new techniques, and finding ways to improve my skills and deliver meaningful work.
                 </p>
               </div>
             </div>
@@ -93,7 +85,7 @@ function About() {
 
       <footer className="mx-auto max-w-screen-2xl py-8 border-t border-white/10 px-6 sm:px-8 lg:px-16">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">© 2026 KDM. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© 2026 Kaye De Mesa. All rights reserved.</p>
           <div className="flex items-center gap-4 text-muted-foreground">
             <a href="#" aria-label="Facebook" className="hover:text-[#1877F2] transition-colors">
               <Facebook size={18} fill="currentColor" strokeWidth={0} />

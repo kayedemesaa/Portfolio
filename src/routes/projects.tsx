@@ -3,10 +3,11 @@ import { ArrowUpRight, Github, Linkedin, Facebook } from "lucide-react";
 import movietixImage from "@/assets/movietix.png";
 import bobaBunnyImage from "@/assets/boba-bunny.png";
 import serviceBookingImage from "@/assets/service-booking.png";
-import marketingCreativeImage from "@/assets/marketing-creative.png";
 import wiseOptionsImage from "@/assets/wise-options.png";
 import wiseOptionsAdminImage from "@/assets/wise-options-admin.png";
 import hydraImage from "@/assets/hydra.png";
+import websiteDesignImage from "@/assets/website-design.jpg";
+import kachavaImage from "@/assets/kachava.png";
 import { ProjectCover } from "@/components/project-cover";
 
 export const Route = createFileRoute("/projects")({
@@ -33,14 +34,6 @@ const projects = [
     imageFit: "contain" as const,
   },
   {
-    title: "Marketing and Creative Content",
-    description: "A collection of marketing videos, social media creatives, promotional materials, and graphic designs created for various projects.",
-    stack: ["Strategy", "Design", "Content"],
-    accent: "from-orange-400/35 via-amber-600/15 to-transparent",
-    url: "#",
-    images: [marketingCreativeImage],
-  },
-  {
     title: "MovieTix",
     description: "A movie ticketing app prototype with seat selection, showtimes, and a polished booking flow.",
     stack: ["Figma", "UI/UX", "Prototype"],
@@ -65,12 +58,22 @@ const projects = [
     images: [serviceBookingImage],
   },
   {
-    title: "Signal API Hub",
-    description: "An authenticated API explorer with request builder tools and clean docs layout.",
-    stack: ["Node.js", "APIs", "Auth"],
-    accent: "from-emerald-400/40 via-teal-600/20 to-transparent",
-    url: "#",
-    images: [] as string[],
+    title: "Website Design",
+    description: "A collection of modern website designs with clean layouts, intuitive user experiences, and conversion-focused pages built for different brands and businesses.",
+    stack: ["FIGMA", "UI/UX", "MOCKUP"],
+    accent: "from-sky-400/35 via-teal-700/15 to-transparent",
+    url: "https://drive.google.com/drive/folders/12jBB1dYDM0Q3WPeOrvkEFjTsTUPk54S6?usp=sharing",
+    images: [websiteDesignImage],
+    imageFit: "cover" as const,
+  },
+  {
+    title: "Kachava website design",
+    description: "A KA'CHAVA website redesign with product storytelling, flavor selection, and conversion-focused wellness shopping.",
+    stack: ["FIGmA", "UI/UX", "PROTOTYPE"],
+    accent: "from-lime-400/30 via-emerald-800/20 to-transparent",
+    url: "https://www.figma.com/proto/F1eWYC4cLTj6kjKkhWcFUD/Kaye?node-id=1-5443&t=NEuLPWIxmr94ehPJ-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A5443",
+    images: [kachavaImage],
+    imageFit: "cover" as const,
   },
 ];
 

@@ -39,6 +39,7 @@ import heroPortrait from "@/assets/hero-portrait.jpg";
 import wiseOptionsImage from "@/assets/wise-options.png";
 import wiseOptionsAdminImage from "@/assets/wise-options-admin.png";
 import hydraImage from "@/assets/hydra.png";
+import websiteDesignImage from "@/assets/website-design.jpg";
 import { contactInfo, whatsappUrl, WhatsAppIcon } from "@/lib/contact";
 import { ProjectCover } from "@/components/project-cover";
 import { useEffect, useRef, useState, type RefObject } from "react";
@@ -183,12 +184,13 @@ const featuredProjects = [
     imageFit: "contain" as const,
   },
   {
-    title: "Signal API Hub",
-    description: "An authenticated API explorer with request builder tools and clean docs layout.",
-    stack: ["Node.js", "APIs", "Auth"],
-    accent: "from-emerald-400/40 via-teal-600/20 to-transparent",
-    url: "/projects",
-    images: [] as string[],
+    title: "Website Design",
+    description: "A collection of modern website designs with clean layouts, intuitive user experiences, and conversion-focused pages built for different brands and businesses.",
+    stack: ["FIGMA", "UI/UX", "MOCKUP"],
+    accent: "from-sky-400/35 via-teal-700/15 to-transparent",
+    url: "https://drive.google.com/drive/folders/12jBB1dYDM0Q3WPeOrvkEFjTsTUPk54S6?usp=sharing",
+    images: [websiteDesignImage],
+    imageFit: "cover" as const,
   },
 ];
 
@@ -294,12 +296,13 @@ function Index() {
               Turning vision into reality with code and design.
             </h1>
             <p className="mt-6 max-w-lg text-sm md:text-base text-muted-foreground leading-relaxed">
-              Full-stack developer building polished web apps with React, TypeScript, and
-              thoughtful UI—from first sketch to ship.
+            Creating thoughtful, user-centered digital experiences through UI/UX design and front-end development. From website interfaces and landing pages to responsive web applications, I combine creative design, clean code, and modern technologies to bring ideas to life.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-5">
               <a
-                href="#"
+                href="https://drive.google.com/file/d/1RtY4FZP4Gk_hw7RUXBNopeinI6ddCMOX/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md bg-foreground px-5 py-3 text-sm font-medium text-background hover:bg-cyan-300 transition-colors"
               >
                 Resume <ArrowUpRight size={16} />
@@ -324,12 +327,17 @@ function Index() {
           <h2 className="text-4xl md:text-5xl font-bold mb-8">About Me</h2>
           <div className="max-w-3xl space-y-4">
             <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-              I build modern web applications that feel fast, clear, and intentional—pairing clean
-              React and TypeScript architecture with interfaces people actually enjoy using.
+              I create websites, landing pages, funnels, and user experiences that are modern,
+              intuitive, and built with purpose.
             </p>
             <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-              Every project is a balance of craft and clarity: solid engineering underneath, and a
-              design language that stays quiet until it needs to speak.
+              From UI/UX design and responsive websites to funnels and workflow automation, I turn
+              ideas into digital experiences that look good, work smoothly, and make things easier.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
+              I&apos;m also investing more of my learning into AI and emerging technologies,
+              constantly finding new ways to improve how I build, solve problems, and ship better
+              digital experiences.
             </p>
           </div>
         </section>
@@ -467,7 +475,7 @@ function Index() {
 
       <footer className="mx-auto max-w-screen-2xl py-8 border-t border-white/10 px-6 sm:px-8 lg:px-16">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">© 2026 KDM. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© 2026 Kaye De Mesa. All rights reserved.</p>
           <div className="flex items-center gap-4 text-muted-foreground">
             <a href="#" aria-label="Facebook" className="hover:text-[#1877F2] transition-colors">
               <Facebook size={18} fill="currentColor" strokeWidth={0} />
