@@ -6,36 +6,52 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { contactInfo, whatsappUrl, WhatsAppIcon } from "@/lib/contact";
+import { contactFormSchema, sendContactEmail } from "@/lib/send-contact";
 
 export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
 function Contact() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "sent" | "needs_activation" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const subject = String(data.get("subject") || "").trim();
-    const message = String(data.get("message") || "").trim();
+    const payload = {
+      name: String(data.get("name") || ""),
+      email: String(data.get("email") || ""),
+      subject: String(data.get("subject") || ""),
+      message: String(data.get("message") || ""),
+      website: String(data.get("website") || ""),
+    };
 
-    const mailto = new URL(`mailto:${contactInfo.email}`);
-    mailto.searchParams.set(
-      "subject",
-      subject || `Portfolio message from ${name || "visitor"}`,
-    );
-    mailto.searchParams.set(
-      "body",
-      `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    );
+    const parsed = contactFormSchema.safeParse(payload);
+    if (!parsed.success) {
+      setStatus("error");
+      setErrorMessage(parsed.error.issues[0]?.message || "Please check the form and try again.");
+      return;
+    }
 
-    window.location.href = mailto.toString();
-    setStatus("sent");
-    form.reset();
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const result = await sendContactEmail(parsed.data);
+      setStatus(result);
+      if (result === "sent") {
+        form.reset();
+      }
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "Unable to send your message.",
+      );
+    }
   }
 
   return (
@@ -120,6 +136,10 @@ function Contact() {
               onSubmit={handleSubmit}
               className="w-full space-y-5 border border-white/10 bg-white/[0.03] p-6 sm:p-8"
             >
+              <div className="sr-only" aria-hidden>
+                <label htmlFor="website">Website</label>
+                <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+              </div>
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
                 <Input
@@ -167,14 +187,27 @@ function Contact() {
 
               <Button
                 type="submit"
+                disabled={status === "sending"}
                 className="h-11 w-full sm:w-auto bg-foreground text-background hover:bg-cyan-300 hover:text-background"
               >
-                Send message <ArrowUpRight size={16} />
+                {status === "sending" ? "Sending..." : "Send message"}
+                {status !== "sending" && <ArrowUpRight size={16} />}
               </Button>
 
               {status === "sent" && (
-                <p className="text-sm text-cyan-300">
-                  Opening your email app… If nothing opens, email {contactInfo.email} directly.
+                <p className="text-sm text-cyan-300" aria-live="polite">
+                  Message sent to {contactInfo.email}. I&apos;ll get back to you soon.
+                </p>
+              )}
+              {status === "needs_activation" && (
+                <p className="text-sm text-cyan-300" aria-live="polite">
+                  Check {contactInfo.email} for a FormSubmit email and click
+                  Activate Form. After that, new messages will arrive in that inbox.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-rose-300" aria-live="assertive">
+                  {errorMessage} You can also email {contactInfo.email} directly.
                 </p>
               )}
             </form>
