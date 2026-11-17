@@ -184,7 +184,7 @@ const featuredProjects = [
     imageFit: "contain" as const,
   },
   {
-    title: "freshSpace Web Design",
+    title: "FreshSpace Web Design",
     description: "A professional cleaning services website for FreshSpace Cleaning Co. with booking CTAs, trust badges, and a conversion-focused landing page.",
     stack: ["Figma", "UI/UX", "Prototype"],
     accent: "from-sky-400/35 via-blue-700/15 to-transparent",
@@ -300,7 +300,7 @@ function Index() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-5">
               <a
-                href="https://drive.google.com/file/d/1RtY4FZP4Gk_hw7RUXBNopeinI6ddCMOX/view?usp=sharing"
+                href="https://drive.google.com/file/d/1rhui_5F-adiscnmEz5yqhCn8J7NYNw7k/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md bg-foreground px-5 py-3 text-sm font-medium text-background hover:bg-cyan-300 transition-colors"
