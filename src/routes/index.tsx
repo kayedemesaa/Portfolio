@@ -39,7 +39,7 @@ import heroPortrait from "@/assets/hero-portrait.jpg";
 import wiseOptionsImage from "@/assets/wise-options.png";
 import wiseOptionsAdminImage from "@/assets/wise-options-admin.png";
 import hydraImage from "@/assets/hydra.png";
-import websiteDesignImage from "@/assets/website-design.jpg";
+import freshspaceImage from "@/assets/freshspace.png";
 import { contactInfo, whatsappUrl, WhatsAppIcon } from "@/lib/contact";
 import { ProjectCover } from "@/components/project-cover";
 import { useEffect, useRef, useState, type RefObject } from "react";
@@ -184,12 +184,12 @@ const featuredProjects = [
     imageFit: "contain" as const,
   },
   {
-    title: "Website Design",
-    description: "A collection of modern website designs with clean layouts, intuitive user experiences, and conversion-focused pages built for different brands and businesses.",
-    stack: ["FIGMA", "UI/UX", "MOCKUP"],
-    accent: "from-sky-400/35 via-teal-700/15 to-transparent",
-    url: "https://drive.google.com/drive/folders/12jBB1dYDM0Q3WPeOrvkEFjTsTUPk54S6?usp=sharing",
-    images: [websiteDesignImage],
+    title: "freshSpace Web Design",
+    description: "A professional cleaning services website for FreshSpace Cleaning Co. with booking CTAs, trust badges, and a conversion-focused landing page.",
+    stack: ["Figma", "UI/UX", "Prototype"],
+    accent: "from-sky-400/35 via-blue-700/15 to-transparent",
+    url: "https://www.figma.com/proto/jyvvTMcYkAZuV3sIBdwXN2/FreshSpace?node-id=15-20&p=f&t=gHrHiQprRzY6Lugu-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
+    images: [freshspaceImage],
     imageFit: "cover" as const,
   },
 ];
